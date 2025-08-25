@@ -41,7 +41,7 @@ spec:
             - name: PYTHONUNBUFFERED
               valueFrom:
                 configMapKeyRef:
-                  name: app-config
+                  name: {{ .Chart.Name }}-app-config
                   key: PYTHONUNBUFFERED
           {{- range $k, $v := .Values.secrets }}
             - name: {{ $k }}
